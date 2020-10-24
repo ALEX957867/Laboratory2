@@ -13,7 +13,9 @@ protected:
 public:
 	TVector(int s = 10, int si = 0);
 	TVector(const TVector& v);
-	~TVector();
+	virtual~TVector()
+	{
+	};
 	int GetSize() { return Size; };
 	int GetStartIndex() { return StartIndex; };
 	ValType& GetValue(int pos);
@@ -57,15 +59,6 @@ TVector<ValType>::TVector(const TVector<ValType>& v)
 	StartIndex = v.StartIndex;
 	for (int i = 0; i < Size; i++)pVector[i] = v.pVector[i];
 }
-template <class ValType>
-TVector<ValType>::~TVector()
-{
-
-	cout << "f";
-	delete[] pVector;
-
-
-};
 template <class ValType>
 ValType& TVector<ValType>::operator[](int pos)
 {
