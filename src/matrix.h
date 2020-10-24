@@ -7,6 +7,10 @@ public:
     TMatrix(int s = 10);
     TMatrix(const TMatrix& mt);
     TMatrix(const  TVector<TVector<ValType> >& mt);
+    virtual ~TMatrix()
+    {
+        delete[] pVector;
+    };
     TMatrix& operator == (const TMatrix& mt);
     TMatrix& operator = (const TMatrix& mt);
     TMatrix operator + (const TMatrix& mt);
