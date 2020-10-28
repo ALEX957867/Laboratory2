@@ -7,7 +7,7 @@ public:
     TMatrix(int s = 10);
     TMatrix(const TMatrix& mt);
     TMatrix(const  TVector<TVector<ValType> >& mt);
-    virtual ~TMatrix()
+    ~TMatrix() override
     {
         delete[] pVector;
     };
